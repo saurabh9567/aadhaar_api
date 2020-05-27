@@ -46,6 +46,6 @@ class aadhaar(viewsets.ViewSet):
         captcha.send_keys(captcha_text)
         driver.find_element_by_xpath('//*[@id="submitButton"]').click()
         elements = driver.find_element_by_xpath('//*[@id="maincontent"]/div/div[1]/div[3]')
-        txt = json.loads(elements.text)
+        txt = elements.text
         return Response(txt)
         
